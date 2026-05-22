@@ -5,7 +5,7 @@ colorFrom: blue
 colorTo: indigo
 sdk: streamlit
 sdk_version: 1.31.0
-app_file: app.py
+app_file: streamlit_app.py
 pinned: false
 ---
 
@@ -24,7 +24,7 @@ A sophisticated, asynchronous AI agent built with Python, Cohere, and Streamlit.
 
 ## 🛠️ Tech Stack
 
-- **Language:** Python 3.14+
+- **Language:** Python 3.11+
 - **AI Model:** Cohere API
 - **UI Framework:** Streamlit
 - **Package Manager:** [uv](https://github.com/astral-sh/uv)
