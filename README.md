@@ -1,3 +1,14 @@
+---
+title: Multi Tool Ai Agent
+emoji: 🦾
+colorFrom: blue
+colorTo: indigo
+sdk: streamlit
+sdk_version: 1.31.0
+app_file: app.py
+pinned: false
+---
+
 # 🤖 Multi-Tool AI Agent
 
 A sophisticated, asynchronous AI agent built with Python, Cohere, and Streamlit. This agent automates the workflow of searching the web, synthesizing information using advanced AI models, saving results to a local database, and emailing a concise summary to any specified recipient.
