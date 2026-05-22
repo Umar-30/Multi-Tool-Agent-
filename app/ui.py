@@ -9,7 +9,7 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from app.agent import MultiToolAgent
-from app.tools.database import init_db
+from app.tools.database import init_db, DB_NAME
 
 # Page Configuration
 st.set_page_config(
@@ -114,7 +114,7 @@ async def run_agent_logic(prompt, email):
     return await agent.run(user_prompt=prompt, email=email)
 
 def get_history():
-    conn = sqlite3.connect("agent.db")
+    conn = sqlite3.connect(DB_NAME)
     df = pd.read_sql_query("SELECT * FROM searches ORDER BY id DESC LIMIT 10", conn)
     conn.close()
     return df
@@ -151,7 +151,7 @@ def main():
         # 3. Clear History Function
         if st.button("🗑️ Clear All History"):
             try:
-                conn = sqlite3.connect("agent.db")
+                conn = sqlite3.connect(DB_NAME)
                 conn.execute("DELETE FROM searches")
                 conn.commit()
                 conn.close()

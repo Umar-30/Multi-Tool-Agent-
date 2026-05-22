@@ -1,6 +1,11 @@
+import os
 import aiosqlite
 
-DB_NAME = "agent.db"
+# Check if running on Hugging Face with persistent storage
+if os.path.exists("/data"):
+    DB_NAME = "/data/agent.db"
+else:
+    DB_NAME = "agent.db"
 
 
 async def init_db():
